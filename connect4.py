@@ -15,9 +15,8 @@ game_over = False
 board = [[empty_char for_in range (board_width) for _ in range (board_height)]]
 
 def setup_game():
-	for row in range(board_height):
-		board.append([empty_char] * board_width)
-
+	global  board
+		board = [[empty_char]* board_width for_in range (board_height)]
 def render():
 	for row in range(len(board)):
 		print (board[row])
