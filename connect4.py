@@ -4,19 +4,21 @@ player_char = '@'
 computer_char = '#'
 empty_char = 'O'
 
+Win_condition_length = 4
 board_width = 12
 board_height = 10
 empty_char = ''
 # constants with board size and game logic 
 
+
 player_turn = True
 game_over = False
 
-board = [[empty_char for_in range (board_width) for _ in range (board_height)]]
+board = [[empty_char for _ in range (board_width) for _ in range(board_height)]]
 
 def setup_game():
 	global  board
-		board = [[empty_char]* board_width for_in range (board_height)]
+		board = [[empty_char]* board_width for_in range(board_height)]
 def render():
 	for row in range(len(board)):
 		print (board[row])

@@ -1,0 +1,24 @@
+# Reset and test both conditions: winning and nearly winning
+
+def test_win_and_near_win():
+    setup_game()
+
+    # Test 1: Winning condition (4 in a row)
+    move(0, PLAYER_CHAR)
+    move(1, PLAYER_CHAR)
+    move(2, PLAYER_CHAR)
+    move(3, PLAYER_CHAR)
+    win_result = game_won(PLAYER_CHAR)
+
+    # Reset board
+    setup_game()
+
+    # Test 2: Nearly winning condition (3 in a row)
+    move(0, PLAYER_CHAR)
+    move(1, PLAYER_CHAR)
+    move(2, PLAYER_CHAR)
+    near_win_result = game_won(PLAYER_CHAR)
+
+    return win_result, near_win_result
+
+test_win_and_near_win()
