@@ -14,11 +14,13 @@ empty_char = ''
 player_turn = True
 game_over = False
 
-board = [[empty_char for _ in range (board_width) for _ in range(board_height)]]
+board = [[empty_char for _ in range(board_width)] for _ in range(board_height)]
+
 
 def setup_game():
 	global  board
-		board = [[empty_char]* board_width for_in range(board_height)]
+board = [[empty_char for _ in range(board_width)] for _ in range(board_height)]
+# the part sets the inital game as an empty board
 def render():
 	for row in range(len(board)):
 		print (board[row])
@@ -54,6 +56,8 @@ def computer_move():
 	move(col, computer_char)
 
 def move(col, char):
+  # Player token is then added in player_char
+  # and only will move once colum has space
 	if not col_full(col):
 		for row in range(len(board)-1, -1, -1):
 			if board[row][col] == empty_char:
